@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skeleton Loading Animation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+        }
+
+        .skeleton {
+            width: 90%;
+            max-width: 600px;
+            background: #fff;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .skeleton .line {
+            height: 20px;
+            background-color: #e0e0e0;
+            border-radius: 4px;
+            margin-bottom: 10px;
+            animation: loading 1.2s infinite;
+        }
+
+        .skeleton .line.short {
+            width: 60%;
+        }
+
+        .skeleton .line.medium {
+            width: 80%;
+        }
+
+        .skeleton .line.long {
+            width: 100%;
+        }
+
+        @keyframes loading {
+            0% {
+                background-color: #e0e0e0;
+            }
+            50% {
+                background-color: #d0d0d0;
+            }
+            100% {
+                background-color: #e0e0e0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="skeleton">
+        <div class="line short"></div>
+        <div class="line medium"></div>
+        <div class="line long"></div>
+        <div class="line short"></div>
+        <div class="line medium"></div>
+        <div class="line long"></div>
+        <div class="line short"></div>
+    </div>
+</body>
+</html>

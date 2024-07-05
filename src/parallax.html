@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pure CSS Parallax</title>
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            line-height: 1.8;
+        }
+
+        .parallax {
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .parallax-1 {
+            background-image: url('https://picsum.photos/1200/800?random=1');
+        }
+
+        .parallax-2 {
+            background-image: url('https://picsum.photos/1200/800?random=2');
+        }
+
+        .parallax-3 {
+            background-image: url('https://picsum.photos/1200/800?random=3');
+        }
+
+        .content {
+            background-color: #f4f4f4;
+            padding: 50px;
+            text-align: center;
+        }
+
+        .text {
+            background-color: rgba(255, 255, 255, 0.8);
+            color: #000;
+            padding: 20px;
+            font-size: 24px;
+        }
+    </style>
+</head>
+<body>
+    <div class="parallax parallax-1">
+        <div class="text">Welcome to Parallax</div>
+    </div>
+
+    <div class="content">
+        <h2>Section 1</h2>
+        <p>This is a pure CSS parallax effect. No JavaScript required!</p>
+    </div>
+
+    <div class="parallax parallax-2">
+        <div class="text">Scroll Down</div>
+    </div>
+
+    <div class="content">
+        <h2>Section 2</h2>
+        <p>The background images remain fixed while you scroll the page.</p>
+    </div>
+
+    <div class="parallax parallax-3">
+        <div class="text">Pure CSS Magic</div>
+    </div>
+
+    <div class="content">
+        <h2>Section 3</h2>
+        <p>This creates a simple but effective parallax scrolling effect.</p>
+    </div>
+</body>
+</html>
