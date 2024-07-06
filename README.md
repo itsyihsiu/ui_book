@@ -1,6 +1,6 @@
-# Vanilla UI
+# Slim UI
 
-Pure js UI component. Just need one js file.
+UI component that can be directly used by copying and pasting.
 
 ## Development
 
@@ -16,4 +16,4 @@ npm run build
 
 ## Usage
 
-* **Toask**
+Go to demo directory. Copy and paste the code.
