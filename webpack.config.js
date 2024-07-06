@@ -2,23 +2,23 @@ const path = require('path');
 
 module.exports = [
     {
-        entry: './src/vanilla-ui.js',
+        entry: './src/slim-ui.js',
         output: {
-            filename: 'vanilla-ui.min.js',
+            filename: 'slim-ui.min.js',
             path: path.resolve(__dirname, 'dist'),
         },
         mode: 'production',
     },
     {
-        entry: './src/vanilla-ui.js',
+        entry: './src/slim-ui.js',
         output: {
-            filename: 'vanilla-ui.min.js',
-            path: path.resolve(__dirname, 'demo'),
+            filename: 'slim-ui.min.js',
+            path: path.resolve(__dirname, 'docs'),
         },
         mode: 'development',
         devServer: {
             static: {
-                directory: path.join(__dirname, 'demo'),  // Directory to serve
+                directory: path.join(__dirname, 'docs'),  // Directory to serve
             }, 
             compress: true,  // Enable gzip compression for everything served
             port: 9000,  // Port number to listen on
