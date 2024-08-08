@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drag and drop file</title>
+</head>
+
+<body>
+    <div class="uploader-wrapper">
+        <img id="uploader-img"
+            src="https://1.bp.blogspot.com/-2icHJ4zioLs/YHDkG_fwSII/AAAAAAABdkg/x6TzbjTM8U874CDTB1JpMKid3XU_kN94wCNcBGAsYHQ/s400/cat_kotatsu_neko.png" />
+        <div class="uploader-btn-tray">
+            <label for="uploader-file">新增</label>
+            <button>刪除</button>
+        </div>
+        <input id="uploader-file" type="file" accept="image/*" />
+    </div>
+
+    <script>
+        import './style.css';
+
+        let fileInput = document.getElementById('uploader-file');
+        let img = document.getElementById('uploader-img');
+
+        fileInput.addEventListener('change', function (event) {
+            // img.src = URL.createObjectURL(event.target.files[0]);
+
+            let file = event.target.files[0];
+
+            handleFile(file);
+        });
+
+        function handleFile(file) {
+            if (!file) {
+                return;
+            }
+
+            let reader = new FileReader();
+            reader.onload = function (event) {
+                img.src = reader.result;
+            };
+            reader.readAsDataURL(file);
+        }
+
+        let dropArea = document.querySelector('.uploader-wrapper');
+
+        dropArea.addEventListener('dragenter', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+            dropArea.classList.add('highlight');
+        });
+
+        dropArea.addEventListener('dragleave', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+            dropArea.classList.remove('highlight');
+        });
+
+        dropArea.addEventListener('dragover', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+            dropArea.classList.add('highlight');
+        });
+
+        dropArea.addEventListener('drop', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+            dropArea.classList.remove('highlight');
+            handleFile(e?.dataTransfer?.files[0]);
+        });
+
+    </script>
+</body>
+
+</html>

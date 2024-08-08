@@ -1,4 +1,4 @@
-# Slim UI
+# Potato UI
 
 UI component that can be directly used by copying and pasting.
 

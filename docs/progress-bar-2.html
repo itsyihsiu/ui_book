@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reading Progress</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+
+        #progress-container {
+            position: fixed;
+            width: 100%;
+            height: 8px;
+            top: 0;
+            left: 0;
+            background: #f3f3f3;
+        }
+
+        #progress-bar {
+            height: 8px;
+            background: #4caf50;
+            width: 0%;
+        }
+
+        .content {
+            padding: 20px;
+            margin-top: 16px; /* Add margin to prevent content from hiding behind the progress bar */
+        }
+
+        p {
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <div id="progress-container">
+        <div id="progress-bar"></div>
+    </div>
+    <div class="content" style="height: 3000px;">
+        <h1>Welcome to the Long Read</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque interdum, quam sed varius condimentum, ligula neque hendrerit urna, id bibendum lorem enim at dui. Pellentesque ac augue id magna tempus consequat.</p>
+        <p>Aliquam erat volutpat. Duis imperdiet sapien at purus ullamcorper, vel efficitur nisi consectetur. In sagittis mi ut lectus pulvinar, eget dapibus justo consectetur.</p>
+        <p>Donec nec ligula non dolor varius faucibus. Sed sit amet ipsum quis lorem blandit vehicula. Maecenas bibendum elit a enim efficitur, a volutpat augue dignissim.</p>
+        <p>Nunc nec eros sit amet lacus porttitor cursus. Mauris nec risus convallis, pulvinar eros id, placerat odio. Integer accumsan arcu in nisl pretium, vel tristique ligula hendrerit.</p>
+        <p>... add many more paragraphs to make the page really long ...</p>
+        <!-- Repeat the above paragraph multiple times to make the page long -->
+        <p>Aliquam erat volutpat. Duis imperdiet sapien at purus ullamcorper, vel efficitur nisi consectetur. In sagittis mi ut lectus pulvinar, eget dapibus justo consectetur.</p>
+        <p>Donec nec ligula non dolor varius faucibus. Sed sit amet ipsum quis lorem blandit vehicula. Maecenas bibendum elit a enim efficitur, a volutpat augue dignissim.</p>
+        <p>Nunc nec eros sit amet lacus porttitor cursus. Mauris nec risus convallis, pulvinar eros id, placerat odio. Integer accumsan arcu in nisl pretium, vel tristique ligula hendrerit.</p>
+        <p>Aliquam erat volutpat. Duis imperdiet sapien at purus ullamcorper, vel efficitur nisi consectetur. In sagittis mi ut lectus pulvinar, eget dapibus justo consectetur.</p>
+        <p>Donec nec ligula non dolor varius faucibus. Sed sit amet ipsum quis lorem blandit vehicula. Maecenas bibendum elit a enim efficitur, a volutpat augue dignissim.</p>
+        <p>Nunc nec eros sit amet lacus porttitor cursus. Mauris nec risus convallis, pulvinar eros id, placerat odio. Integer accumsan arcu in nisl pretium, vel tristique ligula hendrerit.</p>
+    </div>
+    <script>
+        window.onscroll = function() { updateProgressBar() };
+
+        function updateProgressBar() {
+            var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            var scrolled = (winScroll / height) * 100;
+            document.getElementById("progress-bar").style.width = scrolled + "%";
+        }
+    </script>
+</body>
+</html>
