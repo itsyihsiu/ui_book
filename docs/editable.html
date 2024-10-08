@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editable Paragraph</title>
+    <style>
+        #editable-p {
+            border: 1px solid #ccc;
+            padding: 5px;
+            min-height: 20px;
+            border-radius: 4px;
+            outline: none;
+            width: 200px;
+        }
+
+        #editable-p:focus {
+            border-color: #007bff;
+            box-shadow: 0 0 0 0.2rem rgba(0,123,255,.25);
+        }
+    </style>
+</head>
+<body>
+    <p id="editable-p" contenteditable="true">Click here to edit this text</p>
+</body>
+</html>
