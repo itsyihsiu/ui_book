@@ -1,0 +1,19 @@
+{
+  "name": "ui_tools",
+  "version": "1.0.0",
+  "description": "UI component that can be directly used by copying and pasting.",
+  "main": "index.js",
+  "scripts": {
+    "dev": "npx webpack serve --open",
+    "build": "npx webpack",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "webpack": "^5.97.1",
+    "webpack-cli": "^6.0.1",
+    "webpack-dev-server": "^5.2.0"
+  }
+}

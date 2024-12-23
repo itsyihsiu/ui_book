@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>...</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="logo.png" type="image/png">
+    <styele>
+      /* Grid Container Styling */
+      .grid-container {
+          display: grid;
+          gap: 20px;
+      }
+      
+      /* Default: Single column layout */
+      .grid-container {
+          grid-template-columns: 1fr;
+      }
+      
+      /* Medium Screens: Two columns */
+      @media (min-width: 600px) {
+          .grid-container {
+              grid-template-columns: repeat(2, 1fr);
+          }
+      }
+      
+      /* Large Screens: Four columns */
+      @media (min-width: 1024px) {
+          .grid-container {
+              grid-template-columns: repeat(4, 1fr);
+          }
+      }
+      
+      /* Grid Item Styling (optional) */
+      .grid-item {
+          background-color: #f9f9f9;
+          border: 1px solid #ddd;
+          border-radius: 5px;
+          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
+    </styele>
+  </head>
+  <body>
+    <div class="grid-container">
+      <div class="grid-item">Item 2</div>
+      <div class="grid-item">Item 3</div>
+      <div class="grid-item">Item 4</div>
+      <div class="grid-item">Item 5</div>
+      <div class="grid-item">Item 6</div>
+    </div>    
+  </body>
+</html>

@@ -1,4 +1,4 @@
-import './vanilla-ui.min.js';
+import './ui_tools.min.js';
 
 Toast.success({
     title: 'Success',

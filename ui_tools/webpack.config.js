@@ -2,17 +2,17 @@ const path = require('path');
 
 module.exports = [
     {
-        entry: './src/slim-ui.js',
+        entry: './src/main.js',
         output: {
-            filename: 'slim-ui.min.js',
+            filename: 'ui_tools.min.js',
             path: path.resolve(__dirname, 'dist'),
         },
         mode: 'production',
     },
     {
-        entry: './src/slim-ui.js',
+        entry: './src/main.js',
         output: {
-            filename: 'slim-ui.min.js',
+            filename: 'ui_tools.min.js',
             path: path.resolve(__dirname, 'docs'),
         },
         mode: 'development',
