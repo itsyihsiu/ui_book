@@ -1,0 +1,90 @@
+<!doctype html>
+<html>
+  <head>
+
+    <style>
+      .radio-container {
+        display: block;
+        position: relative;
+        padding-left: 35px;
+        margin-bottom: 12px;
+        cursor: pointer;
+        font-size: 16px;
+        user-select: none;
+      }
+
+      /* Hide the default radio button */
+      .radio-container input {
+        position: absolute;
+        opacity: 0;
+        cursor: pointer;
+      }
+
+      /* Create custom radio button */
+      .checkmark {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 20px;
+        width: 20px;
+        background-color: #eee;
+        border-radius: 50%;
+        transition: all 0.3s ease;
+      }
+
+      /* On hover */
+      .radio-container:hover input ~ .checkmark {
+        background-color: #ccc;
+      }
+
+      /* When checked */
+      .radio-container input:checked ~ .checkmark {
+        background-color: #2196F3;
+      }
+
+      /* Create the indicator (dot) */
+      .checkmark:after {
+        content: "";
+        position: absolute;
+        display: none;
+        top: 5px;
+        left: 5px;
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background: white;
+      }
+
+      /* Show the indicator when checked */
+      .radio-container input:checked ~ .checkmark:after {
+        display: block;
+      }
+
+      /* Focus styles for accessibility */
+      .radio-container input:focus ~ .checkmark {
+        box-shadow: 0 0 0 3px rgba(33, 150, 243, 0.3);
+      }
+    </style>
+  </head>
+  <body>
+
+    /* Example HTML usage */
+    <div>
+      <label class="radio-container">Option 1
+        <input type="radio" name="radio-group" checked>
+        <span class="checkmark"></span>
+      </label>
+      
+      <label class="radio-container">Option 2
+        <input type="radio" name="radio-group">
+        <span class="checkmark"></span>
+      </label>
+      
+      <label class="radio-container">Option 3
+        <input type="radio" name="radio-group">
+        <span class="checkmark"></span>
+      </label>
+    </div>
+
+  </body>
+</html>
