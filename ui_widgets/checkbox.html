@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    .custom-checkbox {
+      position: relative;
+      padding-left: 35px;
+      cursor: pointer;
+      font-size: 16px;
+      user-select: none;
+      display: inline-block;
+      line-height: 24px;
+    }
+
+    .custom-checkbox input {
+      position: absolute;
+      opacity: 0;
+      cursor: pointer;
+      height: 0;
+      width: 0;
+    }
+
+    .checkmark {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 24px;
+      width: 24px;
+      background-color: #fff;
+      border: 2px solid #4a5568;
+      border-radius: 4px;
+      transition: all 0.2s ease-in-out;
+    }
+
+    .custom-checkbox:hover input ~ .checkmark {
+      background-color: #f7fafc;
+    }
+
+    .custom-checkbox input:checked ~ .checkmark {
+      background-color: #4299e1;
+      border-color: #4299e1;
+    }
+
+    .checkmark:after {
+      content: "";
+      position: absolute;
+      display: none;
+      left: 8px;
+      top: 4px;
+      width: 5px;
+      height: 10px;
+      border: solid white;
+      border-width: 0 2px 2px 0;
+      transform: rotate(45deg);
+      transition: all 0.2s ease-in-out;
+    }
+
+    .custom-checkbox input:checked ~ .checkmark:after {
+      display: block;
+      animation: checkmark 0.2s ease-in-out forwards;
+    }
+
+    @keyframes checkmark {
+      0% {
+        opacity: 0;
+        transform: rotate(45deg) scale(0.5);
+      }
+      100% {
+        opacity: 1;
+        transform: rotate(45deg) scale(1);
+      }
+    }
+
+    /* Add focus styles for accessibility */
+    .custom-checkbox input:focus ~ .checkmark {
+      box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.5);
+    }
+
+    /* Container for demo */
+    .container {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      padding: 24px;
+      font-family: system-ui, -apple-system, sans-serif;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <label class="custom-checkbox">
+      <input type="checkbox">
+      <span class="checkmark"></span>
+      Check me
+    </label>
+
+    <label class="custom-checkbox">
+      <input type="checkbox" checked>
+      <span class="checkmark"></span>
+      I'm already checked
+    </label>
+
+    <label class="custom-checkbox">
+      <input type="checkbox">
+      <span class="checkmark"></span>
+      Another option
+    </label>
+  </div>
+</body>
+</html>
